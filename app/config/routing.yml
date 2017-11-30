@@ -1,0 +1,4 @@
+star_todo:
+    resource: "@starTODOBundle/Resources/config/routing.yml"
+    prefix:   /
+

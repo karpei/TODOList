@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Добавление задания</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-success">Добавить</button>
+            <a href="{{ path('tasks_index') }}"><button type="button" class="btn btn-warning">Все задачи</button></a>
+    {{ form_end(form) }}
+        </div></div></div>
+{% endblock %}

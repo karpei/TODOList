@@ -1,0 +1,4 @@
+services:
+#    star_todo.example:
+#        class: star\TODOBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

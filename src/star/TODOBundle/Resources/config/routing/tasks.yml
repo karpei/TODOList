@@ -1,0 +1,36 @@
+tasks_index:
+    path:     /
+    defaults: { _controller: "starTODOBundle:Tasks:index" }
+    methods:  GET
+
+tasks_show:
+    path:     /{id}/show
+    defaults: { _controller: "starTODOBundle:Tasks:show" }
+    methods:  GET
+
+tasks_new:
+    path:     /new
+    defaults: { _controller: "starTODOBundle:Tasks:new" }
+    methods:  [GET, POST]
+
+tasks_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "starTODOBundle:Tasks:edit" }
+    methods:  [GET, POST]
+
+tasks_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "starTODOBundle:Tasks:delete" }
+    methods:  [DELETE]
+register:
+        path: /register
+        defaults: { _controller: "starTODOBundle:Register:Register" }
+        methods:  [GET, POST]
+login:
+        path: /login
+        defaults: { _controller: "starTODOBundle:Login:login" }
+        methods:  [GET, POST]
+logout:
+      path: /logout
+      defaults: { _controller: "starTODOBundle:Login:logout" }
+      methods:  [GET, POST]

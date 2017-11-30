@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Изменить задание</h1>
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <button type="submit" class="btn btn-success">Изменить</button>
+                <a href="{{ path('tasks_index') }}"><button type="button" class="btn btn-warning">Все задачи</button></a>
+                {{ form_end(edit_form) }}
+                <div style="padding-top: 2px">
+                {{ form_start(delete_form) }}
+                <button type="submit" class="btn btn-danger">Удалить</button>
+                {{ form_end(delete_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

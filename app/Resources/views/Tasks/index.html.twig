@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container" style="padding-top:100px;text-align: center">
+    <div class="row">
+        <div class="col-xs-12">
+<table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Задача</th>
+                <th scope="col">Описание задачи</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td> {% if task.status == 0 %} Выполняется {% elseif task.status == 1 %}Выполнено {% endif %}</td>
+
+
+                <td>
+                    <a href="{{ path('tasks_show', { 'id': task.id }) }}"><button type="button" class="btn btn-success">Просмотр</button></a>
+                    <a href="{{ path('tasks_edit', { 'id': task.id }) }}"><button type="button" class="btn btn-warning">Изменить</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            <a href="{{ path('tasks_new') }}"><button type="button" class="btn btn-success">Добавить задачу</button></a>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a href="{{ logout_path() }}"><button type="button" class="btn btn-danger">Выход</button></a>
+            {% endif %}
+</div>
+    </div>
+    </div>
+{% endblock %}

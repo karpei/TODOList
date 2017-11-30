@@ -1,0 +1,3 @@
+star_todo_tasks:
+    resource: "@starTODOBundle/Resources/config/routing/tasks.yml"
+    prefix:   /
